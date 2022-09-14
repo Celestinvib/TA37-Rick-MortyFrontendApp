@@ -1,11 +1,11 @@
-<div class="row m-4" *ngIf="characters!=null; else wait">
+<div class="row m-2" *ngIf="characters!=null; else wait">
         <div class="col mt-4 " *ngFor="let character of characters">
             <div class="card" style="width: 18rem;">
                 <img src="{{ character.image }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-center">{{ character.name}}</h5>
+                        <h6 class="card-title text-center">{{ character.name}}</h6>
                         <div class="d-grid gap-2">
-                        <a class="btn btn-warning ">See more</a>
+                        <a class="btn btn-warning" routerLink="/characters/show" [queryParams]="{id: character.id}">See more</a>
                         </div>
                     </div>
             </div>
